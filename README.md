@@ -175,3 +175,42 @@ stretch your skills.
     - lines 39-40, and 53-54
   - **magazine_test.py**
     - lines 35-36, 55-56, 59-60, 90-91, and 105-106
+
+
+  1 Article Class:
+
+The Article class is initialized with an author, magazine, and title.
+
+The title, author, and magazine properties enforce type and length constraints.
+
+When an Article is created, it is automatically added to the author's and magazine's lists of articles.
+
+2 Author Class:
+
+The Author class is initialized with a name, and it maintains a list of articles written by the author.
+
+The name property ensures the name is a non-empty string.
+
+The articles() method returns the list of articles written by the author.
+
+The magazines() method returns a unique list of magazines the author has contributed to.
+
+The add_article() method creates a new Article and associates it with the author and magazine.
+
+The topic_areas() method returns a unique list of magazine categories the author has written for.
+
+3 Magazine Class:
+
+The Magazine class is initialized with a name and category.
+
+The name and category properties enforce type and length constraints.
+
+The articles() method returns the list of articles published in the magazine.
+
+The contributors() method returns a unique list of authors who have written for the magazine.
+
+The article_titles() method returns a list of titles of all articles in the magazine.
+
+The contributing_authors() method returns authors who have written more than 2 articles for the magazine.
+
+The top_publisher() class method returns the magazine with the most articles.
