@@ -123,13 +123,13 @@ class Magazine:
         return list(set(article.author for article in self.articles()))
 
     def article_titles(self):
-        if not self._articles():
+        if not self._articles:
             return None
         return [article.title for article in self._articles]
 
     def contributing_authors(self):
         author_counts = {}
-        for article in self.articles():
+        for article in self.articles:
             if article.author in author_counts:
                   author_counts[article.author] += 1
             else:
