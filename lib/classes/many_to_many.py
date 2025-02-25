@@ -7,8 +7,7 @@ class Article:
         self._add_to_author()    # Add this article to the author's list of articles
         self._add_to_magazine()  # Add this article to the magazine's list of articles
         Article.all.append(self)
-       #author.articles().append(self)
-       #magazine.articles().append(self)
+       
 
     @property
     def title(self):
