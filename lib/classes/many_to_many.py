@@ -101,6 +101,11 @@ class Magazine:
         self._category = category
         self.articles = [] #->empty list _articles to store published articles.
 
+    def article_titles(self):
+        if not self._articles:
+            return []
+        return [article.title for article in self._articles]
+
     @property
     def name(self):
         return self._name
@@ -124,7 +129,7 @@ class Magazine:
         return self._articles
 
     def contributors(self):
-        return list(set(article.author for article in self.articles()))
+        return list(set(article.author for article in self.articles))
 
     def article_titles(self):
         if not self._articles:
