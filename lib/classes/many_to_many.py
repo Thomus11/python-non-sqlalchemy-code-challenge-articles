@@ -15,8 +15,12 @@ class Article:
     
     @title.setter
     def title(self,title):
-        if not isinstance(title, str) or len(title) < 5 or len(title) > 50:
-            raise Exception("Title must be a string between 5 and 50 characters,inclusive")
+    
+        if not isinstance(title, str):
+            raise TypeError("Title must be a string.")
+        if len(title) < 5 or len(title) > 50:
+             raise ValueError("Title must be between 5 and 50 characters, inclusive.")
+
         self._title = title
 
     @property
@@ -50,12 +54,12 @@ class Article:
     
     def _add_to_magazine(self):
         if self._magazine:
-            self._magazine.articles().append(self) #Add this article to the magazine's list of articles
+            self._magazine.articles.append(self) #Add this article to the magazine's list of articles
 
         
 class Author:
     def __init__(self, name):
-        self.name = name
+        self._name = name
         self._articles = [] #->store articles written by the author
 
     @property
@@ -94,7 +98,7 @@ class Author:
 class Magazine:
     def __init__(self, name, category):
         self.name = name
-        self.category = category
+        self._category = category
         self.articles = [] #->empty list _articles to store published articles.
 
     @property
